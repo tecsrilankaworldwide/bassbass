@@ -1,0 +1,105 @@
+{
+  "app": {
+    "name": "TopBass",
+    "tagline": "Find Trusted Handymen",
+    "subtitle": "A TRUSTED SERVICE OF TEC SRI LANKA WORLDWIDE (PVT.) LTD"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "bookings": "My Bookings",
+    "profile": "Profile",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "admin": "Admin",
+    "chat": "Chat",
+    "shop": "Shop"
+  },
+  "shop": {
+    "manageHandymen": "Manage your team of handymen",
+    "addHandyman": "Add Handyman",
+    "totalHandymen": "Total Handymen",
+    "approved": "Approved",
+    "pendingApproval": "Pending",
+    "noHandymen": "No handymen yet"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "fullName": "Full Name",
+    "phone": "Phone Number",
+    "district": "District",
+    "loginBtn": "Sign In",
+    "registerBtn": "Create Account",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "asCustomer": "I need a handyman",
+    "asHandyman": "I am a handyman",
+    "asShop": "I run a shop/business"
+  },
+  "home": {
+    "searchPlaceholder": "Search handymen by name, skill...",
+    "search": "Search",
+    "searchResultsFor": "Results for",
+    "clearSearch": "Clear",
+    "allDistricts": "All Districts",
+    "viewAll": "View All",
+    "topRated": "Top Rated Handymen",
+    "howItWorks": "How It Works",
+    "step1": "Choose Service",
+    "step1Desc": "Pick from 19 service categories",
+    "step2": "Find Handyman",
+    "step2Desc": "Browse profiles, ratings & reviews",
+    "step3": "Book or Call",
+    "step3Desc": "Send a booking request or call directly"
+  },
+  "handyman": {
+    "experience": "years experience",
+    "rate": "per hour",
+    "callNow": "Call Now",
+    "whatsapp": "WhatsApp",
+    "bookNow": "Book Now",
+    "reviews": "Reviews",
+    "noReviews": "No reviews yet",
+    "jobsCompleted": "Jobs Done"
+  },
+  "booking": {
+    "describe": "Describe what you need",
+    "date": "Preferred Date",
+    "time": "Preferred Time",
+    "address": "Address",
+    "submit": "Send Booking Request",
+    "pending": "Pending",
+    "quoted": "Quoted",
+    "accepted": "Accepted",
+    "rejected": "Rejected",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "inProgress": "In Progress"
+  },
+  "common": {
+    "search": "Search",
+    "filter": "Filter",
+    "cancel": "Cancel",
+    "save": "Save",
+    "loading": "Loading...",
+    "noResults": "No results found",
+    "back": "Back"
+  },
+  "billing": {
+    "serviceCharge": "Service Charge",
+    "total": "Total",
+    "paid": "Paid",
+    "sendQuote": "Send Quote",
+    "quotePrice": "Quote Price",
+    "payNow": "Pay Now"
+  },
+  "chat": {
+    "noConversations": "No conversations yet",
+    "startFromBooking": "Start a chat from your bookings",
+    "typePlaceholder": "Type a message..."
+  }
+}

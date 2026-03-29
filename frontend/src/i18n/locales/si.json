@@ -1,0 +1,104 @@
+{
+  "app": {
+    "name": "TopBass",
+    "tagline": "විශ්වාසදායක කාර්මිකයන් සොයන්න",
+    "subtitle": "TEC SRI LANKA WORLDWIDE (PVT.) LTD හි විශ්වාසනීය සේවාවක්"
+  },
+  "nav": {
+    "home": "මුල් පිටුව",
+    "services": "සේවාවන්",
+    "bookings": "මගේ වෙන්කිරීම්",
+    "profile": "පැතිකඩ",
+    "login": "පිවිසෙන්න",
+    "register": "ලියාපදිංචි වන්න",
+    "logout": "ඉවත් වන්න",
+    "admin": "පරිපාලක",
+    "chat": "කතාබහ",
+    "shop": "කඩය"
+  },
+  "shop": {
+    "manageHandymen": "ඔබේ කාර්මිකයන් කළමනාකරණය",
+    "addHandyman": "කාර්මිකයෙකු එකතු කරන්න",
+    "totalHandymen": "මුළු කාර්මිකයන්",
+    "approved": "අනුමත",
+    "pendingApproval": "අපේක්ෂිත",
+    "noHandymen": "තවම කාර්මිකයන් නැත"
+  },
+  "auth": {
+    "login": "පිවිසෙන්න",
+    "register": "ලියාපදිංචි වන්න",
+    "email": "විද්‍යුත් තැපෑල",
+    "password": "මුරපදය",
+    "fullName": "සම්පූර්ණ නම",
+    "phone": "දුරකථන අංකය",
+    "district": "දිස්ත්‍රික්කය",
+    "loginBtn": "පිවිසෙන්න",
+    "registerBtn": "ගිණුම සාදන්න",
+    "noAccount": "ගිණුමක් නැද්ද?",
+    "hasAccount": "දැනටමත් ගිණුමක් තිබේද?",
+    "asCustomer": "මට කාර්මිකයෙක් අවශ්‍යයි",
+    "asHandyman": "මම කාර්මිකයෙක්",
+    "asShop": "මම කඩයක්/ව්‍යාපාරයක් පවත්වාගෙන යනවා"
+  },
+  "home": {
+    "searchPlaceholder": "නමින්, කුසලතාවයෙන් සොයන්න...",
+    "search": "සොයන්න",
+    "searchResultsFor": "ප්‍රතිඵල",
+    "clearSearch": "හිස් කරන්න",
+    "allDistricts": "සියලු දිස්ත්‍රික්ක",
+    "viewAll": "සියල්ල බලන්න",
+    "topRated": "ඉහළම ශ්‍රේණිගත කාර්මිකයන්",
+    "howItWorks": "ක්‍රියා කරන ආකාරය",
+    "step1": "සේවාව තෝරන්න",
+    "step1Desc": "සේවා කාණ්ඩ 19 කින් තෝරන්න",
+    "step2": "කාර්මිකයා සොයන්න",
+    "step2Desc": "පැතිකඩ, ශ්‍රේණිගත කිරීම් බලන්න",
+    "step3": "වෙන්කරන්න හෝ අමතන්න",
+    "step3Desc": "වෙන්කිරීම් ඉල්ලීමක් යවන්න හෝ කෙලින්ම අමතන්න"
+  },
+  "handyman": {
+    "experience": "වසර පළපුරුද්ද",
+    "rate": "පැයකට",
+    "callNow": "දැන් අමතන්න",
+    "whatsapp": "WhatsApp",
+    "bookNow": "දැන් වෙන්කරන්න",
+    "reviews": "සමාලෝචන",
+    "noReviews": "තවම සමාලෝචන නැත",
+    "jobsCompleted": "සිදු කළ රැකියා"
+  },
+  "booking": {
+    "describe": "ඔබට අවශ්‍ය දේ විස්තර කරන්න",
+    "date": "කැමති දිනය",
+    "time": "කැමති වේලාව",
+    "address": "ලිපිනය",
+    "submit": "වෙන්කිරීම් ඉල්ලීම යවන්න",
+    "pending": "බලා සිටිමින්",
+    "accepted": "පිළිගත්තා",
+    "rejected": "ප්‍රතික්ෂේප කළා",
+    "completed": "සම්පූර්ණයි",
+    "cancelled": "අවලංගුයි",
+    "inProgress": "ක්‍රියාත්මක වෙමින්"
+  },
+  "common": {
+    "search": "සොයන්න",
+    "filter": "පෙරහන",
+    "cancel": "අවලංගු කරන්න",
+    "save": "සුරකින්න",
+    "loading": "පූරණය වෙමින්...",
+    "noResults": "ප්‍රතිඵල හමු නොවීය",
+    "back": "ආපසු"
+  },
+  "billing": {
+    "serviceCharge": "සේවා ගාස්තු",
+    "total": "මුළු මුදල",
+    "paid": "ගෙවා ඇත",
+    "sendQuote": "මිල යවන්න",
+    "quotePrice": "මිල ගණන් කරන්න",
+    "payNow": "දැන් ගෙවන්න"
+  },
+  "chat": {
+    "noConversations": "තවම කතාබහ නැත",
+    "startFromBooking": "ඔබගේ වෙන්කිරීම් වලින් කතාබහක් ආරම්භ කරන්න",
+    "typePlaceholder": "පණිවිඩයක් ටයිප් කරන්න..."
+  }
+}

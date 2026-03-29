@@ -1,0 +1,65 @@
+{
+  "name": "grade5-exam-desktop",
+  "version": "2.1.0",
+  "description": "Grade 5 Scholarship Exam Platform - Desktop Application (Network Edition)",
+  "main": "main.js",
+  "author": "TEC Sri Lanka Worldwide (Pvt.) Ltd",
+  "license": "Proprietary",
+  "scripts": {
+    "start": "electron .",
+    "dist-win": "electron-builder --win --x64",
+    "dist-win-portable": "electron-builder --win portable --x64",
+    "dist-linux": "electron-builder --linux",
+    "dist-all": "electron-builder --win --linux"
+  },
+  "build": {
+    "appId": "com.tecsrilanka.grade5exam",
+    "productName": "Grade 5 Exam Platform",
+    "copyright": "Copyright 2026 TEC Sri Lanka Worldwide (Pvt.) Ltd",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "loading.html",
+      "assets/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "assets/icon.png",
+      "artifactName": "Grade5-Exam-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "Grade5-Exam-Portable-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Grade 5 Exam Platform",
+      "installerIcon": "assets/icon.png",
+      "uninstallerIcon": "assets/icon.png"
+    },
+    "linux": {
+      "target": ["AppImage"],
+      "icon": "assets/icon.png",
+      "category": "Education"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  }
+}

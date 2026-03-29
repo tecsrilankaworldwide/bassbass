@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family:
+        source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+@layer base {
+    :root {
+        /* Brand colors for exam platform */
+        --brand-primary: 35 92% 51%;
+        --brand-primary-dark: 35 92% 44%;
+        --brand-surface: 48 100% 97%;
+        --brand-surface-2: 45 100% 95%;
+        --brand-surface-3: 45 100% 90%;
+        --brand-ink: 215 28% 17%;
+        --brand-ink-soft: 215 19% 27%;
+        --brand-brown: 24 85% 32%;
+        --brand-brown-soft: 26 86% 27%;
+        --brand-ring: 35 92% 51%;
+        --layout-left-gutter: 240px;
+        
+        /* Shadcn defaults */
+        --background: 48 100% 97%;
+        --foreground: 215 28% 17%;
+        --card: 0 0% 100%;
+        --card-foreground: 215 28% 17%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 215 28% 17%;
+        --primary: 35 92% 51%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 45 100% 95%;
+        --secondary-foreground: 215 28% 17%;
+        --muted: 45 100% 95%;
+        --muted-foreground: 215 19% 27%;
+        --accent: 45 100% 90%;
+        --accent-foreground: 215 28% 17%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 45 70% 80%;
+        --input: 45 70% 80%;
+        --ring: 35 92% 51%;
+        --chart-1: 38 94% 54%;
+        --chart-2: 35 92% 51%;
+        --chart-3: 35 92% 44%;
+        --chart-4: 45 94% 85%;
+        --chart-5: 24 85% 32%;
+        --radius: 0.75rem;
+    }
+    .dark {
+        --background: 0 0% 3.9%;
+        --foreground: 0 0% 98%;
+        --card: 0 0% 3.9%;
+        --card-foreground: 0 0% 98%;
+        --popover: 0 0% 3.9%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 0 0% 98%;
+        --primary-foreground: 0 0% 9%;
+        --secondary: 0 0% 14.9%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 0 0% 14.9%;
+        --muted-foreground: 0 0% 63.9%;
+        --accent: 0 0% 14.9%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 14.9%;
+        --input: 0 0% 14.9%;
+        --ring: 0 0% 83.1%;
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer utilities {
+  /* Mobile Responsive Utilities */
+  .mobile-container {
+    @apply px-4 py-6 sm:px-6 lg:px-8;
+  }
+  
+  .mobile-card {
+    @apply w-full rounded-lg shadow-md p-4 sm:p-6;
+  }
+  
+  .mobile-button {
+    @apply w-full sm:w-auto px-4 py-3 text-base sm:text-sm;
+  }
+  
+  .mobile-text {
+    @apply text-base sm:text-sm;
+  }
+  
+  .mobile-heading {
+    @apply text-xl sm:text-2xl lg:text-3xl;
+  }
+  
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  .mobile-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4;
+  }
+  
+  .mobile-stack {
+    @apply flex flex-col space-y-4;
+  }
+  
+  .hide-mobile {
+    @apply hidden sm:block;
+  }
+  
+  .show-mobile {
+    @apply block sm:hidden;
+  }
+  
+  /* Kid-friendly academic backgrounds */
+  .bg-lined-paper {
+    background-image: linear-gradient(to bottom, rgba(249, 202, 103, 0.18) 1px, transparent 1px);
+    background-size: 100% 28px;
+  }
+  
+  .bg-dotted-grid {
+    background-image: radial-gradient(rgba(249, 202, 103, 0.20) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+  
+  .bg-stars-soft {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120' fill='none'><g fill='%23FCD34D' fill-opacity='0.18'><path d='M60 8l4 10 11 1-8 7 2 11-9-6-9 6 2-11-8-7 11-1 4-10z'/><circle cx='20' cy='20' r='2'/><circle cx='95' cy='40' r='2'/></g></svg>");
+    background-size: 160px 160px;
+  }
+  
+  .bg-badges-soft {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160' fill='none'><g stroke='%23F6A317' stroke-opacity='0.18' stroke-width='2'><circle cx='40' cy='40' r='14'/><path d='M36 28h8l2 8-6 4-6-4 2-8z'/></g></svg>");
+    background-size: 200px 200px;
+  }
+  
+  .noise-soft {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.03"/></svg>');
+
+  /* Spinner animations */
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .spinner {
+    border: 4px solid rgba(246, 163, 23, 0.3);
+    border-top-color: #F6A317;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.6s linear infinite;
+  }
+
+  .spinner-small {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 0.6s linear infinite;
+    display: inline-block;
+  }
+
+  }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}

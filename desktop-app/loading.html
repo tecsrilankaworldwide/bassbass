@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connecting...</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #FFFBF0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #1F2937;
+        }
+        .container {
+            text-align: center;
+            max-width: 480px;
+            padding: 40px;
+        }
+        .logo-box {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, #F59E0B, #D97706);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.25);
+        }
+        .logo-box svg {
+            width: 56px;
+            height: 56px;
+            fill: white;
+        }
+        h1 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1F2937;
+            margin-bottom: 4px;
+            letter-spacing: -0.3px;
+        }
+        .subtitle {
+            font-size: 13px;
+            color: #6B7280;
+            margin-bottom: 32px;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 16px;
+            border: 3px solid #FDE68A;
+            border-top: 3px solid #F59E0B;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .status {
+            font-size: 14px;
+            color: #92400E;
+            font-weight: 500;
+        }
+        .dots::after {
+            content: '';
+            animation: dots 1.5s steps(4) infinite;
+        }
+        @keyframes dots {
+            0% { content: ''; }
+            25% { content: '.'; }
+            50% { content: '..'; }
+            75% { content: '...'; }
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 11px;
+            color: #9CA3AF;
+        }
+        .retry-btn {
+            display: none;
+            margin: 16px auto 0;
+            padding: 10px 28px;
+            background: #F59E0B;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .retry-btn:hover { background: #D97706; }
+        .error { display: none; color: #DC2626; font-size: 13px; margin-top: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-box">
+            <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+        </div>
+        <h1>Grade 5 Exam Platform</h1>
+        <p class="subtitle">Examination Evaluation Bureau</p>
+        <div class="spinner" id="spinner"></div>
+        <p class="status"><span id="status">Connecting to server</span><span class="dots"></span></p>
+        <p class="error" id="error"></p>
+        <button class="retry-btn" id="retryBtn" onclick="retryConnection()">Retry Connection</button>
+        <p class="footer">TEC Sri Lanka Worldwide (Pvt.) Ltd</p>
+    </div>
+
+    <script>
+        const SERVER = 'https://grade5exam.com';
+        let attempts = 0;
+
+        async function checkServer() {
+            attempts++;
+            document.getElementById('status').textContent = 
+                attempts > 1 ? `Reconnecting (attempt ${attempts})` : 'Connecting to server';
+            document.getElementById('error').style.display = 'none';
+            document.getElementById('retryBtn').style.display = 'none';
+            document.getElementById('spinner').style.display = 'block';
+
+            try {
+                const res = await fetch(SERVER + '/api/', { signal: AbortSignal.timeout(8000) });
+                if (res.ok) {
+                    document.getElementById('status').textContent = 'Connected! Loading...';
+                    // Server is up — Electron's main.js will redirect to the site
+                }
+            } catch (err) {
+                document.getElementById('spinner').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('error').textContent = 
+                    'Could not connect. Please check your internet connection.';
+                document.getElementById('retryBtn').style.display = 'inline-block';
+                document.getElementById('status').textContent = 'Connection failed';
+            }
+        }
+
+        function retryConnection() {
+            checkServer();
+        }
+
+        checkServer();
+    </script>
+</body>
+</html>
