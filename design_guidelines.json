@@ -1,0 +1,111 @@
+{
+  "theme": "LIGHT",
+  "archetype": "3 (Pastel & Soft) mixed with Academic Structure (Teen Pacific Academic)",
+  "mood": "youthful, structured, trustworthy, approachable, energetic",
+  "color_palette": {
+    "background": {
+      "main": "#FAF9F6",
+      "secondary": "#F0F4F8",
+      "card": "#FFFFFF",
+      "header_glass": "rgba(255, 255, 255, 0.85)"
+    },
+    "text": {
+      "primary": "#0B2545",
+      "secondary": "#4A5568",
+      "muted": "#718096",
+      "inverse": "#FFFFFF"
+    },
+    "primary": {
+      "base": "#0B2545",
+      "hover": "#133C55",
+      "active": "#1A2942"
+    },
+    "accent": {
+      "base": "#F05A4A",
+      "hover": "#E63946",
+      "active": "#D90429"
+    },
+    "tertiary": {
+      "light_blue": "#E2E8F0",
+      "pacific_blue": "#133C55",
+      "success": "#48BB78",
+      "warning": "#ECC94B",
+      "error": "#F56565"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Outfit, sans-serif",
+      "body": "DM Sans, sans-serif"
+    },
+    "scales": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-none",
+      "h2": "text-3xl sm:text-4xl tracking-tight leading-tight",
+      "h3": "text-xl sm:text-2xl font-medium",
+      "h4": "text-lg sm:text-xl font-medium",
+      "body": "text-base leading-relaxed",
+      "small": "text-sm uppercase tracking-[0.2em]"
+    }
+  },
+  "spacing_and_layout": {
+    "generous_spacing": "p-8 md:p-12",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8",
+    "card_radius": "rounded-2xl",
+    "button_radius": "rounded-full"
+  },
+  "motion_and_interactions": {
+    "hover_state": "transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg",
+    "focus_state": "focus:ring-2 focus:ring-accent-base focus:outline-none focus:ring-offset-2",
+    "button_click": "active:scale-95 transition-transform"
+  },
+  "surface_strategies": {
+    "glassmorphism": "backdrop-blur-xl bg-white/85 border-b border-gray-200/50 shadow-sm",
+    "neumorphism": "bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100",
+    "cards": "bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200 transition-all",
+    "dashboard_cards": "bg-white rounded-xl p-5 border border-gray-100 shadow-sm"
+  },
+  "components_strategy": {
+    "forms": "Use Shadcn customized with soft gray borders, DM Sans font, rounded-xl",
+    "buttons": "Primary: bg-[#F05A4A] text-white hover:bg-[#E63946]. Secondary: bg-[#0B2545] text-white hover:bg-[#133C55].",
+    "badges": "Youthful pastel backgrounds with dark academic text, e.g., bg-blue-100 text-[#0B2545] rounded-full px-3 py-1 text-xs font-semibold"
+  },
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.pexels.com/photos/4981801/pexels-photo-4981801.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Energetic construction worker, good for hero section overlay.",
+      "category": "hero"
+    },
+    "category_plumber": {
+      "url": "https://images.unsplash.com/photo-1542632867-261e4be41c7c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODF8MHwxfHNlYXJjaHwyfHxwbHVtYmVyJTIwZml4aW5nJTIwcGlwZXxlbnwwfHx8fDE3NzQ4MTgxOTF8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Plumber fixing pipe, grayscale/professional tone.",
+      "category": "services"
+    },
+    "category_electrician": {
+      "url": "https://images.pexels.com/photos/1325725/pexels-photo-1325725.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Electrician working on wiring.",
+      "category": "services"
+    },
+    "category_carpenter": {
+      "url": "https://images.pexels.com/photos/6790751/pexels-photo-6790751.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Carpenter working with wood in workshop.",
+      "category": "services"
+    },
+    "general_handyman": {
+      "url": "https://images.pexels.com/photos/7285918/pexels-photo-7285918.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Smiling bald man with a red power drill, friendly and approachable.",
+      "category": "testimonial_or_about"
+    }
+  },
+  "icons": "Use lucide-react (default) with 2px stroke width.",
+  "testing": "All interactive and key informational elements MUST include a data-testid attribute (e.g., data-testid='hero-cta-button', data-testid='category-plumber-card').",
+  "instructions_to_main_agent": [
+    "Use pure HTML + Tailwind for the marketing/landing page. Avoid Vercel/Stripe generic looks. Use aggressive asymmetry for the hero.",
+    "For the booking, dashboard, and admin pages, use Shadcn UI customized to match the 'teen pacific academic' aesthetic. Use flat, rectangular, but slightly rounded (rounded-2xl) cards with crisp borders.",
+    "Use Outfit for Headings and DM Sans for Body. Add tracking-tight to H1/H2.",
+    "Do not use teal green (#1B93A4) for anything.",
+    "Use Sunset Coral (#F05A4A) for CTAs to break the Academic Navy (#0B2545) dominance and bring the 'teen' vibe.",
+    "Header must be sticky with Glassmorphism (backdrop-blur-xl bg-white/85). Ensure navigation links are visible on desktop.",
+    "Ensure all buttons, inputs, and clickable cards have hover:bg and hover:-translate-y-1 as defined in the motion guidelines.",
+    "For frontend files, you MUST write .js or .jsx (not .tsx) as configured in the setup."
+  ]
+}
