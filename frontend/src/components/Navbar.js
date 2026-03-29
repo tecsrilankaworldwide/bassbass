@@ -55,56 +55,56 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <nav className="backdrop-blur-xl bg-white/90 border-b border-gray-200/50 sticky top-0 z-50 shadow-sm">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-between h-14">
-          <Link to="/" className="flex items-center gap-2" data-testid="nav-logo">
-            <img src={LOGO_URL} alt="TopBass" className="w-9 h-9 object-contain" />
-            <span className="text-lg font-extrabold text-green-800" style={{fontFamily:'Manrope,sans-serif'}}>TopBass</span>
+        <div className="flex items-center justify-between h-16">
+          <Link to="/" className="flex items-center gap-2.5" data-testid="nav-logo">
+            <img src={LOGO_URL} alt="TopBass" className="w-10 h-10 object-contain" />
+            <span className="text-xl font-bold text-[#0B2545]" style={{fontFamily:'Outfit,sans-serif'}}>TopBass</span>
           </Link>
 
           {/* Desktop */}
-          <div className="hidden md:flex items-center gap-3">
-            <Link to="/" className="text-sm font-medium text-gray-600 hover:text-green-600 px-2 py-1">{t('nav.home')}</Link>
-            <Link to="/overview" className="text-sm font-medium text-gray-600 hover:text-green-600 px-2 py-1" data-testid="nav-overview">About</Link>
+          <div className="hidden md:flex items-center gap-1">
+            <Link to="/" className="text-sm font-medium text-[#4A5568] hover:text-[#0B2545] hover:bg-[#F0F4F8] px-3 py-2 rounded-lg transition-colors">{t('nav.home')}</Link>
+            <Link to="/overview" className="text-sm font-medium text-[#4A5568] hover:text-[#0B2545] hover:bg-[#F0F4F8] px-3 py-2 rounded-lg transition-colors" data-testid="nav-overview">About</Link>
             {user && (
               <>
-                <Link to="/bookings" className="text-sm font-medium text-gray-600 hover:text-green-600 px-2 py-1" data-testid="nav-bookings">{t('nav.bookings')}</Link>
-                <Link to="/chat" className="text-sm font-medium text-gray-600 hover:text-green-600 px-2 py-1" data-testid="nav-chat">
-                  <MessageSquare className="w-4 h-4 inline mr-1" />{t('nav.chat')}
+                <Link to="/bookings" className="text-sm font-medium text-[#4A5568] hover:text-[#0B2545] hover:bg-[#F0F4F8] px-3 py-2 rounded-lg transition-colors" data-testid="nav-bookings">{t('nav.bookings')}</Link>
+                <Link to="/chat" className="text-sm font-medium text-[#4A5568] hover:text-[#0B2545] hover:bg-[#F0F4F8] px-3 py-2 rounded-lg transition-colors flex items-center gap-1.5" data-testid="nav-chat">
+                  <MessageSquare className="w-4 h-4" />{t('nav.chat')}
                 </Link>
-                {user.role === 'admin' && <Link to="/admin" className="text-sm font-medium text-gray-600 hover:text-green-600 px-2 py-1" data-testid="nav-admin">{t('nav.admin')}</Link>}
-                {user.role === 'shop' && <Link to="/shop" className="text-sm font-medium text-gray-600 hover:text-green-600 px-2 py-1" data-testid="nav-shop">{t('nav.shop')}</Link>}
-                {['handyman', 'shop'].includes(user.role) && <Link to="/profile" className="text-sm font-medium text-gray-600 hover:text-green-600 px-2 py-1">{t('nav.profile')}</Link>}
+                {user.role === 'admin' && <Link to="/admin" className="text-sm font-medium text-[#4A5568] hover:text-[#0B2545] hover:bg-[#F0F4F8] px-3 py-2 rounded-lg transition-colors" data-testid="nav-admin">{t('nav.admin')}</Link>}
+                {user.role === 'shop' && <Link to="/shop" className="text-sm font-medium text-[#4A5568] hover:text-[#0B2545] hover:bg-[#F0F4F8] px-3 py-2 rounded-lg transition-colors" data-testid="nav-shop">{t('nav.shop')}</Link>}
+                {['handyman', 'shop'].includes(user.role) && <Link to="/profile" className="text-sm font-medium text-[#4A5568] hover:text-[#0B2545] hover:bg-[#F0F4F8] px-3 py-2 rounded-lg transition-colors">{t('nav.profile')}</Link>}
 
                 {/* Notification Bell */}
-                <div className="relative" ref={notifRef}>
+                <div className="relative ml-2" ref={notifRef}>
                   <button onClick={() => { setNotifOpen(!notifOpen); if (!notifOpen && unread > 0) markAllRead(); }}
-                    className="relative p-2 text-gray-500 hover:text-green-600 transition-colors" data-testid="nav-notifications">
+                    className="relative p-2.5 text-[#4A5568] hover:text-[#0B2545] hover:bg-[#F0F4F8] rounded-lg transition-colors" data-testid="nav-notifications">
                     <Bell className="w-5 h-5" />
                     {unread > 0 && (
-                      <span className="absolute -top-0.5 -right-0.5 w-4.5 h-4.5 bg-orange-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center min-w-[18px] px-1" data-testid="notif-badge">{unread}</span>
+                      <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] bg-[#F05A4A] text-white text-[10px] font-bold rounded-full flex items-center justify-center px-1" data-testid="notif-badge">{unread}</span>
                     )}
                   </button>
                   {notifOpen && (
-                    <div className="absolute right-0 top-full mt-1 w-80 bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden z-50" data-testid="notif-dropdown">
-                      <div className="px-4 py-2.5 border-b border-gray-100 flex items-center justify-between">
-                        <span className="font-bold text-sm text-gray-800">Notifications</span>
-                        {unread > 0 && <button onClick={markAllRead} className="text-xs text-green-600 font-semibold">Mark all read</button>}
+                    <div className="absolute right-0 top-full mt-2 w-80 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50" data-testid="notif-dropdown">
+                      <div className="px-4 py-3 border-b border-gray-100 flex items-center justify-between bg-[#FAF9F6]">
+                        <span className="font-bold text-sm text-[#0B2545]">Notifications</span>
+                        {unread > 0 && <button onClick={markAllRead} className="text-xs text-[#F05A4A] font-semibold hover:text-[#E63946]">Mark all read</button>}
                       </div>
                       <div className="max-h-80 overflow-y-auto">
                         {notifications.length === 0 ? (
-                          <div className="px-4 py-6 text-center text-sm text-gray-400">No notifications</div>
+                          <div className="px-4 py-8 text-center text-sm text-[#718096]">No notifications</div>
                         ) : (
                           notifications.slice(0, 15).map(n => (
                             <Link key={n.id} to={n.link || '/bookings'} onClick={() => setNotifOpen(false)}
-                              className={`block px-4 py-2.5 border-b border-gray-50 hover:bg-green-50 transition-colors ${!n.is_read ? 'bg-green-25' : ''}`} data-testid={`notif-${n.id}`}>
+                              className={`block px-4 py-3 border-b border-gray-50 hover:bg-[#F0F4F8] transition-colors ${!n.is_read ? 'bg-blue-50/50' : ''}`} data-testid={`notif-${n.id}`}>
                               <div className="flex items-start gap-2">
-                                {!n.is_read && <div className="w-2 h-2 bg-orange-500 rounded-full mt-1.5 flex-shrink-0"></div>}
+                                {!n.is_read && <div className="w-2 h-2 bg-[#F05A4A] rounded-full mt-1.5 flex-shrink-0"></div>}
                                 <div className={!n.is_read ? '' : 'ml-4'}>
-                                  <p className="text-sm font-semibold text-gray-800">{n.title}</p>
-                                  <p className="text-xs text-gray-500 line-clamp-1">{n.message}</p>
-                                  <span className="text-[10px] text-gray-400">{timeAgo(n.created_at)}</span>
+                                  <p className="text-sm font-semibold text-[#0B2545]">{n.title}</p>
+                                  <p className="text-xs text-[#718096] line-clamp-1">{n.message}</p>
+                                  <span className="text-[10px] text-[#A0AEC0]">{timeAgo(n.created_at)}</span>
                                 </div>
                               </div>
                             </Link>
@@ -116,13 +116,15 @@ const Navbar = () => {
                 </div>
               </>
             )}
-            <LanguageSwitcher />
+            <div className="ml-2">
+              <LanguageSwitcher />
+            </div>
             {user ? (
-              <button onClick={handleLogout} className="flex items-center gap-1.5 text-sm font-medium text-red-500 hover:text-red-600 px-2 py-1" data-testid="nav-logout">
+              <button onClick={handleLogout} className="flex items-center gap-1.5 text-sm font-medium text-[#F05A4A] hover:text-[#E63946] hover:bg-red-50 px-3 py-2 rounded-lg transition-colors ml-1" data-testid="nav-logout">
                 <LogOut className="w-4 h-4" />{t('nav.logout')}
               </button>
             ) : (
-              <Link to="/login" className="px-4 py-1.5 bg-green-600 text-white font-semibold rounded-lg text-sm hover:bg-green-700 transition-colors" data-testid="nav-login">{t('nav.login')}</Link>
+              <Link to="/login" className="ml-2 px-5 py-2 bg-[#F05A4A] text-white font-semibold rounded-full text-sm hover:bg-[#E63946] active:scale-95 transition-all shadow-sm shadow-[#F05A4A]/20" data-testid="nav-login">{t('nav.login')}</Link>
             )}
           </div>
 
@@ -130,37 +132,37 @@ const Navbar = () => {
           <div className="flex items-center gap-2 md:hidden">
             {user && (
               <div className="relative" ref={notifRef}>
-                <button onClick={() => { setNotifOpen(!notifOpen); if (!notifOpen && unread > 0) markAllRead(); }} className="relative p-2 text-gray-500">
+                <button onClick={() => { setNotifOpen(!notifOpen); if (!notifOpen && unread > 0) markAllRead(); }} className="relative p-2 text-[#4A5568]">
                   <Bell className="w-5 h-5" />
-                  {unread > 0 && <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-orange-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center">{unread}</span>}
+                  {unread > 0 && <span className="absolute -top-0.5 -right-0.5 min-w-[16px] h-4 bg-[#F05A4A] text-white text-[10px] font-bold rounded-full flex items-center justify-center px-1">{unread}</span>}
                 </button>
               </div>
             )}
-            <button className="p-2" onClick={() => setMobileOpen(!mobileOpen)} data-testid="nav-mobile-toggle">
-              {mobileOpen ? <X className="w-6 h-6 text-gray-700" /> : <Menu className="w-6 h-6 text-gray-700" />}
+            <button className="p-2 hover:bg-[#F0F4F8] rounded-lg transition-colors" onClick={() => setMobileOpen(!mobileOpen)} data-testid="nav-mobile-toggle">
+              {mobileOpen ? <X className="w-6 h-6 text-[#0B2545]" /> : <Menu className="w-6 h-6 text-[#0B2545]" />}
             </button>
           </div>
         </div>
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <div className="md:hidden pb-4 space-y-1" data-testid="nav-mobile-menu">
-            <Link to="/" onClick={() => setMobileOpen(false)} className="block px-3 py-2 text-sm font-medium text-gray-700 hover:bg-green-50 rounded-lg">{t('nav.home')}</Link>
-            <Link to="/overview" onClick={() => setMobileOpen(false)} className="block px-3 py-2 text-sm font-medium text-gray-700 hover:bg-green-50 rounded-lg">About</Link>
+          <div className="md:hidden pb-4 space-y-1 border-t border-gray-100 pt-3" data-testid="nav-mobile-menu">
+            <Link to="/" onClick={() => setMobileOpen(false)} className="block px-4 py-2.5 text-sm font-medium text-[#0B2545] hover:bg-[#F0F4F8] rounded-xl">{t('nav.home')}</Link>
+            <Link to="/overview" onClick={() => setMobileOpen(false)} className="block px-4 py-2.5 text-sm font-medium text-[#0B2545] hover:bg-[#F0F4F8] rounded-xl">About</Link>
             {user && (
               <>
-                <Link to="/bookings" onClick={() => setMobileOpen(false)} className="block px-3 py-2 text-sm font-medium text-gray-700 hover:bg-green-50 rounded-lg">{t('nav.bookings')}</Link>
-                <Link to="/chat" onClick={() => setMobileOpen(false)} className="block px-3 py-2 text-sm font-medium text-gray-700 hover:bg-green-50 rounded-lg">{t('nav.chat')}</Link>
-                {['handyman', 'shop'].includes(user.role) && <Link to="/profile" onClick={() => setMobileOpen(false)} className="block px-3 py-2 text-sm font-medium text-gray-700 hover:bg-green-50 rounded-lg">{t('nav.profile')}</Link>}
-                {user.role === 'shop' && <Link to="/shop" onClick={() => setMobileOpen(false)} className="block px-3 py-2 text-sm font-medium text-gray-700 hover:bg-green-50 rounded-lg">{t('nav.shop')}</Link>}
-                {user.role === 'admin' && <Link to="/admin" onClick={() => setMobileOpen(false)} className="block px-3 py-2 text-sm font-medium text-gray-700 hover:bg-green-50 rounded-lg">{t('nav.admin')}</Link>}
+                <Link to="/bookings" onClick={() => setMobileOpen(false)} className="block px-4 py-2.5 text-sm font-medium text-[#0B2545] hover:bg-[#F0F4F8] rounded-xl">{t('nav.bookings')}</Link>
+                <Link to="/chat" onClick={() => setMobileOpen(false)} className="block px-4 py-2.5 text-sm font-medium text-[#0B2545] hover:bg-[#F0F4F8] rounded-xl">{t('nav.chat')}</Link>
+                {['handyman', 'shop'].includes(user.role) && <Link to="/profile" onClick={() => setMobileOpen(false)} className="block px-4 py-2.5 text-sm font-medium text-[#0B2545] hover:bg-[#F0F4F8] rounded-xl">{t('nav.profile')}</Link>}
+                {user.role === 'shop' && <Link to="/shop" onClick={() => setMobileOpen(false)} className="block px-4 py-2.5 text-sm font-medium text-[#0B2545] hover:bg-[#F0F4F8] rounded-xl">{t('nav.shop')}</Link>}
+                {user.role === 'admin' && <Link to="/admin" onClick={() => setMobileOpen(false)} className="block px-4 py-2.5 text-sm font-medium text-[#0B2545] hover:bg-[#F0F4F8] rounded-xl">{t('nav.admin')}</Link>}
               </>
             )}
-            <div className="px-3 py-2"><LanguageSwitcher /></div>
+            <div className="px-4 py-2.5"><LanguageSwitcher /></div>
             {user ? (
-              <button onClick={() => { handleLogout(); setMobileOpen(false); }} className="w-full text-left px-3 py-2 text-sm font-medium text-red-500 hover:bg-red-50 rounded-lg">{t('nav.logout')}</button>
+              <button onClick={() => { handleLogout(); setMobileOpen(false); }} className="w-full text-left px-4 py-2.5 text-sm font-medium text-[#F05A4A] hover:bg-red-50 rounded-xl">{t('nav.logout')}</button>
             ) : (
-              <Link to="/login" onClick={() => setMobileOpen(false)} className="block px-3 py-2 text-sm font-medium text-green-600 hover:bg-green-50 rounded-lg">{t('nav.login')}</Link>
+              <Link to="/login" onClick={() => setMobileOpen(false)} className="block px-4 py-2.5 text-sm font-semibold text-[#F05A4A] hover:bg-red-50 rounded-xl">{t('nav.login')}</Link>
             )}
           </div>
         )}
