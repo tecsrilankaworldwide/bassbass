@@ -77,9 +77,9 @@ const HomePage = () => {
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <img src={LOGO_URL} alt="TopBass" className="w-28 h-28 mx-auto mb-4 object-contain drop-shadow-lg" data-testid="hero-logo" />
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 tracking-tight" style={{fontFamily:'Outfit,sans-serif'}}>
-            {t('app.title') || 'TopBass'}
+            {t('app.heading') || 'For a big or small job - Get the perfect support.'}
           </h1>
-          <p className="text-[#E2E8F0] text-sm sm:text-base mb-8 max-w-xl mx-auto">{t('app.subtitle')}</p>
+          <p className="text-[#E2E8F0] text-base sm:text-lg mb-8 max-w-xl mx-auto">{t('app.subtitle')}</p>
 
           {/* Search bar */}
           <form onSubmit={handleSearch} className="flex flex-col sm:flex-row items-center gap-3 max-w-2xl mx-auto mb-4" data-testid="search-form">
