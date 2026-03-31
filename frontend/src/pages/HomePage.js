@@ -77,12 +77,13 @@ const HomePage = () => {
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <img src={LOGO_URL} alt="TopBass" className="w-28 h-28 mx-auto mb-4 object-contain drop-shadow-lg" data-testid="hero-logo" />
           <div className="mb-6">
-            <div className="inline-flex items-center gap-3 bg-[#F05A4A] px-6 py-2.5 rounded-full shadow-lg mb-4">
-              <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-              <span className="text-white text-sm sm:text-base font-bold tracking-widest uppercase" style={{fontFamily:'DM Sans, sans-serif'}}>
-                {t('app.headingLine1') || 'For a big or small job'}
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <div className="h-[2px] w-12 bg-gradient-to-r from-transparent to-[#F05A4A]"></div>
+              <span className="relative text-lg sm:text-xl font-bold tracking-wider uppercase text-white" style={{fontFamily:'DM Sans, sans-serif'}}>
+                <span className="relative z-10">{t('app.headingLine1') || 'For a big or small job'}</span>
+                <span className="absolute bottom-0 left-0 w-full h-3 bg-[#F05A4A]/40 -z-0 skew-x-[-8deg]"></span>
               </span>
-              <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+              <div className="h-[2px] w-12 bg-gradient-to-l from-transparent to-[#F05A4A]"></div>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight" style={{fontFamily:'Outfit,sans-serif'}}>
               {t('app.headingLine2') || 'Get the perfect support.'}
