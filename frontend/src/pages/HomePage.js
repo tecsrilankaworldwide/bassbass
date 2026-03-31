@@ -89,7 +89,7 @@ const HomePage = () => {
               {t('app.headingLine2') || 'Get the perfect support.'}
             </h1>
           </div>
-          <p className="text-[#E2E8F0] text-base sm:text-lg mb-8 max-w-xl mx-auto">{t('app.subtitle')}</p>
+          <p className="text-white text-lg sm:text-xl font-bold mb-8 max-w-xl mx-auto">{t('app.subtitle')}</p>
 
           {/* Search bar */}
           <form onSubmit={handleSearch} className="flex flex-col sm:flex-row items-center gap-3 max-w-2xl mx-auto mb-4" data-testid="search-form">
