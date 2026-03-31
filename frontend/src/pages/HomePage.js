@@ -97,7 +97,7 @@ const HomePage = () => {
                 className="w-full text-[#0B2545] bg-transparent outline-none font-medium placeholder:text-[#718096]"
                 data-testid="search-input" />
             </div>
-            <button type="submit" className="w-full sm:w-auto px-8 py-3.5 bg-[#D4A017] text-white font-bold rounded-full hover:bg-[#B8860B] active:scale-95 transition-all shadow-lg shadow-[#D4A017]/30" data-testid="search-btn">
+            <button type="submit" className="w-full sm:w-auto px-8 py-3.5 bg-[#FFC107] text-[#0B2545] font-bold rounded-full hover:bg-[#FFD54F] active:scale-95 transition-all shadow-lg shadow-[#FFC107]/30" data-testid="search-btn">
               {t('home.search')}
             </button>
           </form>
