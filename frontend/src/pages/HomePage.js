@@ -77,7 +77,7 @@ const HomePage = () => {
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <img src={LOGO_URL} alt="TopBass" className="w-28 h-28 mx-auto mb-4 object-contain drop-shadow-lg" data-testid="hero-logo" />
           <div className="mb-6">
-            <div className="inline-block bg-[#F05A4A] px-8 py-3 mb-4">
+            <div className="inline-block bg-[#0B2545] px-8 py-3 mb-4">
               <span className="text-white text-lg sm:text-xl font-bold tracking-wider uppercase" style={{fontFamily:'DM Sans, sans-serif'}}>
                 {t('app.headingLine1') || 'For a big or small job'}
               </span>
