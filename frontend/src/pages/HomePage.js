@@ -77,8 +77,8 @@ const HomePage = () => {
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <img src={LOGO_URL} alt="TopBass" className="w-28 h-28 mx-auto mb-4 object-contain drop-shadow-lg" data-testid="hero-logo" />
           <div className="mb-4">
-            <p className="text-lg sm:text-xl text-[#F05A4A] font-semibold tracking-wide uppercase mb-2">
-              {t('app.headingLine1') || 'For a big or small job'}
+            <p className="text-2xl sm:text-3xl text-[#F05A4A] tracking-[0.3em] mb-3" style={{fontFamily:'Bebas Neue, sans-serif'}}>
+              {t('app.headingLine1') || 'FOR A BIG OR SMALL JOB'}
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight" style={{fontFamily:'Outfit,sans-serif'}}>
               {t('app.headingLine2') || 'Get the perfect support.'}
